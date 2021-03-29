@@ -3,24 +3,35 @@ var DC_Module_Factory = function () {
     name: 'DC',
     defaultElementNamespaceURI: 'http:\/\/www.omg.org\/spec\/DMN\/20180521\/DC\/',
     typeInfos: [{
-        localName: 'Bounds',
+        localName: 'Color',
         propertyInfos: [{
-            name: 'x',
+            name: 'red',
             required: true,
-            typeInfo: 'Double',
+            typeInfo: 'Int',
             attributeName: {
-              localPart: 'x'
+              localPart: 'red'
             },
             type: 'attribute'
           }, {
-            name: 'y',
+            name: 'green',
             required: true,
-            typeInfo: 'Double',
+            typeInfo: 'Int',
             attributeName: {
-              localPart: 'y'
+              localPart: 'green'
             },
             type: 'attribute'
           }, {
+            name: 'blue',
+            required: true,
+            typeInfo: 'Int',
+            attributeName: {
+              localPart: 'blue'
+            },
+            type: 'attribute'
+          }]
+      }, {
+        localName: 'Dimension',
+        propertyInfos: [{
             name: 'width',
             required: true,
             typeInfo: 'Double',
@@ -57,8 +68,24 @@ var DC_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Dimension',
+        localName: 'Bounds',
         propertyInfos: [{
+            name: 'x',
+            required: true,
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'x'
+            },
+            type: 'attribute'
+          }, {
+            name: 'y',
+            required: true,
+            typeInfo: 'Double',
+            attributeName: {
+              localPart: 'y'
+            },
+            type: 'attribute'
+          }, {
             name: 'width',
             required: true,
             typeInfo: 'Double',
@@ -76,40 +103,13 @@ var DC_Module_Factory = function () {
             type: 'attribute'
           }]
       }, {
-        localName: 'Color',
-        propertyInfos: [{
-            name: 'red',
-            required: true,
-            typeInfo: 'Int',
-            attributeName: {
-              localPart: 'red'
-            },
-            type: 'attribute'
-          }, {
-            name: 'green',
-            required: true,
-            typeInfo: 'Int',
-            attributeName: {
-              localPart: 'green'
-            },
-            type: 'attribute'
-          }, {
-            name: 'blue',
-            required: true,
-            typeInfo: 'Int',
-            attributeName: {
-              localPart: 'blue'
-            },
-            type: 'attribute'
-          }]
+        type: 'enumInfo',
+        localName: 'KnownColor',
+        values: ['maroon', 'red', 'orange', 'yellow', 'olive', 'purple', 'fuchsia', 'white', 'lime', 'green', 'navy', 'blue', 'aqua', 'teal', 'black', 'silver', 'gray']
       }, {
         type: 'enumInfo',
         localName: 'AlignmentKind',
         values: ['start', 'end', 'center']
-      }, {
-        type: 'enumInfo',
-        localName: 'KnownColor',
-        values: ['maroon', 'red', 'orange', 'yellow', 'olive', 'purple', 'fuchsia', 'white', 'lime', 'green', 'navy', 'blue', 'aqua', 'teal', 'black', 'silver', 'gray']
       }],
     elementInfos: [{
         typeInfo: '.Point',
@@ -118,11 +118,11 @@ var DC_Module_Factory = function () {
         typeInfo: '.Color',
         elementName: 'Color'
       }, {
-        typeInfo: '.Dimension',
-        elementName: 'Dimension'
-      }, {
         typeInfo: '.Bounds',
         elementName: 'Bounds'
+      }, {
+        typeInfo: '.Dimension',
+        elementName: 'Dimension'
       }]
   };
   return {
